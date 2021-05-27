@@ -78,4 +78,4 @@ async def gacha(message):
     if str(message.channel) == 'testing-momobot':
         await message.channel.send(f'{message.author.mention}, Go play gacha at {random.choice(gachapons)} \nDisclaimer: MOMODES will not be held accountable for any bad runs uwu')
 
-client.run(token)
+client.run('ODQ3MzU0Nzk5NTM1MDMwMzAy.YK82pw.iLzbx9wtQ2J_vcabrxxnBrDKI-Y')
