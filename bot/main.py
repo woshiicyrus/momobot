@@ -4,8 +4,12 @@ from discord.ext import commands
 import os
 import random
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 client = commands.Bot(command_prefix = 'momo.')
-token = "ODQ3MzU0Nzk5NTM1MDMwMzAy.YK82pw.MqKeeiRCjJPVNwzPVaZPxfYtuUk"
+token = os.getenv("DISCORD_BOT_TOKEN")
 
 channels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 gachapons = ['New Leaf City', 'Mushroom Shrine', 'Kerning City', 'Henesys', 'Ellinia', 'Nautilus Harbor', 'Showa Town', 'Perion', 'CBD']
@@ -78,4 +82,4 @@ async def gacha(message):
     if str(message.channel) == 'testing-momobot':
         await message.channel.send(f'{message.author.mention}, Go play gacha at {random.choice(gachapons)} \nDisclaimer: MOMODES will not be held accountable for any bad runs uwu')
 
-client.run('ODQ3MzU0Nzk5NTM1MDMwMzAy.YK82pw.iLzbx9wtQ2J_vcabrxxnBrDKI-Y')
+client.run(token)
